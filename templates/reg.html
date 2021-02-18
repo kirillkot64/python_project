@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+
+    <style>
+        body{
+            padding: 40px;
+        }
+        h1{
+            font-family: 'RF Dewi Expanded', serif;
+            font-size: 50px;
+            text-align: center;
+            color: darkblue;
+
+            min-width: 300px;
+            max-width: 500px;
+        }
+        form{
+            min-width: 300px;
+            max-width: 500px;
+
+            display: flex;
+            flex-direction: column;
+        }
+        label{
+            font-family: 'RF Dewi', serif;
+            font-size: 30px;
+        }
+        input{
+            font-family: 'RF Dewi', serif;
+            font-size: 24px;
+        }
+        button{
+            margin: 30px auto;
+            font-family: 'RF Dewi', serif;
+            font-size: 30px;
+            width: 100%;
+        }
+        p{
+            color: red;
+            text-decoration: underline;
+            font-family: 'RF Dewi Extended', serif;
+            font-size: 24px;
+        }
+        a{
+            color: red;
+            text-decoration: underline;
+            font-family: 'RF Dewi Extended', serif;
+            font-size: 24px;
+            min-width: 300px;
+            max-width: 500px;
+            align-self: flex-end;
+        }
+    </style>
+</head>
+<body>
+<h1> Регистрация</h1>
+
+<form method="post">
+    {% if error[0] %}
+        <p>{{ error[1] }}</p>
+    {% endif %}
+
+
+    <label for="login">Логин</label>
+    <input type="text" id="login" name="login" required>
+
+    <label for="password">Пароль</label>
+    <input type="password" id="password" name="password" required>
+
+    <label for="password_check">Повторите пароль</label>
+    <input type="password" id="password_check" name="password_check" required>
+
+    <button type="submit">Зарегистрироваться</button>
+</form>
+</body>
+</html>

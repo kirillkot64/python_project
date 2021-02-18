@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Результаты</title>
+    <style>
+        body{
+            padding: 40px;
+        }
+        h1{
+            font-family: 'RF Dewi Expanded', serif;
+            font-size: 50px;
+            text-align: center;
+            color: darkblue;
+
+            min-width: 300px;
+            max-width: 500px;
+        }
+        form{
+            min-width: 300px;
+            max-width: 500px;
+
+            display: flex;
+            flex-direction: column;
+        }
+        label{
+            font-family: 'RF Dewi', serif;
+            font-size: 30px;
+        }
+        input{
+            font-family: 'RF Dewi', serif;
+            font-size: 24px;
+        }
+        td{
+            font-family: 'RF Dewi', serif;
+            font-size: 24px;
+            padding: 10px 20px;
+        }
+        th{
+            font-family: 'RF Dewi Extended', serif;
+            font-size: 30px;
+            padding: 10px 20px;
+        }
+        tr:nth-child(2n+1){
+            background: gainsboro;
+        }
+        tr:nth-child(2n){
+            background: whitesmoke;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Результаты</h1>
+<table>
+    <tr>
+        {% for header in heading %}
+        <th> {{ header }}</th>
+        {% endfor %}
+    </tr>
+    {% for row in results %}
+    <tr>
+        {% for cell in row %}
+        <td>{{ cell }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

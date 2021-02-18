@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Тест</title>
+    <style>
+        body{
+            padding: 40px;
+        }
+        h1{
+            font-family: 'RF Dewi Expanded', serif;
+            font-size: 50px;
+            text-align: center;
+            color: darkblue;
+
+            min-width: 300px;
+            max-width: 500px;
+        }
+        form{
+            min-width: 300px;
+            max-width: 500px;
+
+            display: flex;
+            flex-direction: column;
+        }
+        label{
+            font-family: 'RF Dewi', serif;
+            font-size: 30px;
+        }
+        input{
+            font-family: 'RF Dewi', serif;
+            font-size: 24px;
+        }
+        button{
+            margin: 30px auto;
+            font-family: 'RF Dewi', serif;
+            font-size: 30px;
+            width: 100%;
+        }
+        p{
+            color: cornflowerblue;
+            text-decoration: underline;
+            font-family: 'RF Dewi Extended', serif;
+            font-size: 24px;
+        }
+        a{
+            min-width: 300px;
+            max-width: 500px;
+            align-self: flex-end;
+        }
+    </style>
+</head>
+<body>
+<h1>Тест</h1>
+<p>Ваш логин: {{ login }}</p>
+
+<form method="post">
+    <button type="submit" name="exit">Выйти</button>
+</form>
+<form method="post">
+    {% for question in test %}
+        <p> {{ question[1] }} </p>
+        <label>
+            <input type=radio name={{ question[0] }} value={{ 1 }} required> {{ question[2] }}
+        </label>
+        <label>
+            <input type=radio name={{ question[0] }} value={{ 2 }} required> {{ question[3] }}
+        </label>
+        <label>
+            <input type=radio name={{ question[0] }} value={{ 3 }} required> {{ question[4] }}
+        </label>
+        <label>
+            <input type=radio name={{ question[0] }} value={{ 4 }} required> {{ question[5] }}
+        </label>
+    {% endfor %}
+    <button type="submit" name="final_test">Закончить тест</button>
+</form>
+</body>
+</html>
